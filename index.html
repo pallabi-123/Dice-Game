@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Game</title>
+  </head>
+  <body>
+    <style>
+      .roll {
+        font-size: 22px;
+      }
+      #result {
+        margin-top: 50px;
+        background-image: url('https://images.pexels.com/photos/705171/dice-eyes-luck-game-705171.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        height: 100vh;
+      }
+    </style>
+    <a href="javascript:void(0)" onclick="roll()" class="roll">Roll</a>
+    <div id="result"></div>
+    <script>
+      function roll() {
+        //Using loader for wait
+        document.getElementById('result').innerHTML =
+          "<img src='image/loader.gif'/>"
+        setTimeout(function () {
+          var rand = Math.floor(Math.random() * 6) + 1
+          // console.log(rand)
+          //line no 17 help korbe screen e random number show korbe.
+          // document.getElementById('result').innerHTML = rand
+          // next amra image diye random number ke call korbo
+          document.getElementById('result').innerHTML =
+            "<img src='image/" + rand + ".png'/>"
+        }, 2000)
+      }
+    </script>
+  </body>
+</html>
